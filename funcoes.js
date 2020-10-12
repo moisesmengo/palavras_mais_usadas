@@ -37,10 +37,23 @@ function removerSeVazio(array) {
   return array.filter(el => el.trim())
 }
 
+function removerSeIncluir(array, padrao) {
+  return array.filter(el => !el.includes(padrao))
+}
+
+function removerSeApenasNumero(array) {
+  return array.filter(el => {
+    const num = parseInt(el.trim())
+    return num !== num
+  })
+}
+
 module.exports = {
   lerDiretorio,
   eletementosTerminadosCom,
   lerArquivo,
   lerArquivos,
-  removerSeVazio
+  removerSeVazio,
+  removerSeIncluir,
+  removerSeApenasNumero
 }
